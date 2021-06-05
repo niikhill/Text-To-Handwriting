@@ -80,6 +80,11 @@ h3 {
     border-radius: 1rem;
 }
 
+.dlBtn:active {
+
+    transform: translateY(2px);
+}
+
 .tools {
     display: flex;
     justify-content: center;
