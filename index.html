@@ -11,6 +11,23 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.1/tippy-bundle.umd.min.js"
+      integrity="sha512-xULG5PJghLB+bsq9AuFbarjLtvtxDVjh47LlxXG25U2v3m+YB7OvNjA6m7pyampiwPVvrXv3Wupiv8oSX+5lRw=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.1/tippy.min.css"
+      integrity="sha512-cFrU9cXMuM9vFGp9UuvYm8mnhWWMIjD592Ry4lu4mv4NAHepZDfvrvD6KJq5g6+a02btseK7xxZASYLFfsSopw=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="top_bar">
@@ -20,14 +37,39 @@
     <div class="main">
       <div class="text_container_col">
         <div class="text_container">
+          <div class="tools">
+            <button id="download" class="dlBtn">Download</button>
+            <input
+              type="range"
+              class="xAxis range"
+              min="1"
+              max="200"
+              value="40"
+            />
+            <input
+              type="range"
+              class="yAxis range"
+              min="1"
+              max="200"
+              value="47"
+            />
+            <input
+              type="range"
+              class="fontSize range"
+              min="0.05"
+              max="5"
+              value="0.35"
+              step="0.1"
+            />
+            <!-- <input type="file" class="actual_btn" /> -->
+            <input type="file" id="files" hidden />
+            <label for="files">Custom Paper</label>
+          </div>
           <div class="input_container">
             <textarea
               class="text_input"
               placeholder="Enter Your text"
             ></textarea>
-          </div>
-          <div class="tools">
-            <button id="download" class="dlBtn">Download</button>
           </div>
         </div>
       </div>
@@ -37,5 +79,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <script src="main.js"></script>
+    <script src="tippy.js"></script>
   </body>
 </html>

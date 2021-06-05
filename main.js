@@ -9,6 +9,39 @@ let textData = "PEP HACK 2.0";
 let fontText = [];
 const downloadBtn = document.getElementById("download");
 const textArea = document.querySelector(".text_input");
+const xAxisSlider = document.querySelector(".xAxis");
+const yAxisSlider = document.querySelector(".yAxis");
+const fontSizeSlider = document.querySelector(".fontSize");
+const paperEl = document.getElementById("files");
+
+//Upload Custom paper
+paperEl.addEventListener("change", (e) => {
+  let reader = new FileReader();
+  reader.readAsDataURL(paperEl.files[0]);
+  reader.onload = function (e) {
+    pageImage = loadImage(e.target.result, () => {
+      loop();
+    });
+  };
+});
+
+//Set Font size
+fontSizeSlider.addEventListener("input", (e) => {
+  fontSize = float(e.target.value);
+  loop();
+});
+
+//Set and get xAxis
+xAxisSlider.addEventListener("input", (e) => {
+  textXAxis = float(e.target.value);
+  loop();
+});
+
+//Set and get yAxis
+yAxisSlider.addEventListener("input", (e) => {
+  textYAxis = float(e.target.value);
+  loop();
+});
 
 //Get Text From Text Area
 textArea.addEventListener("keyup", () => {
@@ -45,7 +78,7 @@ function setCustomFont() {
 
 //Used to create canvas and define its props
 function setup() {
-  canvas = createCanvas(782, 755);
+  canvas = createCanvas(782, 1000);
   canvas.parent("handWriting_container");
   rectMode(CORNER);
   noLoop();
